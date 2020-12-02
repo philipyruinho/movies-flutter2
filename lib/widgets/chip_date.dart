@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
 import '../core/constants.dart';
 
 class ChipDate extends StatelessWidget {
-  final DateTime date;
+  final String date;
   final Color color;
   final String dateFormat;
 
@@ -29,7 +27,7 @@ class ChipDate extends StatelessWidget {
         ),
       ),
       label: Text(
-        DateFormat(dateFormat).format(date),
+        date == '' ? 'Sem data definida' : date,
         textAlign: TextAlign.end,
         style: TextStyle(
           fontSize: 18,

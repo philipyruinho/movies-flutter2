@@ -21,7 +21,7 @@ class MovieDetailModel {
   final String posterPath;
   final List<ProductionCompanyModel> productionCompanies;
   final List<ProductionCountryModel> productionCountries;
-  final DateTime releaseDate;
+  final String releaseDate;
   final int revenue;
   final int runtime;
   final List<SpokenLanguageModel> spokenLanguages;
@@ -85,7 +85,7 @@ class MovieDetailModel {
         productionCountries: List<ProductionCountryModel>.from(
             json["production_countries"]
                 .map((x) => ProductionCountryModel.fromMap(x))),
-        releaseDate: DateTime.parse(json["release_date"]),
+        releaseDate: json["release_date"],
         revenue: json["revenue"],
         runtime: json["runtime"],
         spokenLanguages: List<SpokenLanguageModel>.from(json["spoken_languages"]
